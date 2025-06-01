@@ -68,7 +68,7 @@
 
   <h2>Data Pasien</h2>
 
-  <a href="tambah_pasien.php" class="add-btn">+ Tambah Pasien</a>
+  <a href="tambah-pasien.php" class="add-btn">+ Tambah Pasien</a>
 
   <table>
     <thead>
@@ -76,9 +76,12 @@
         <th>ID</th>
         <th>Nama</th>
         <th>NIK</th>
+        <th>Tanggak Lahir</th>
         <th>Jenis Kelamin</th>
-        <th>No HP</th>
         <th>Alamat</th>
+        <th>No Telepon</th>
+        <th>Email</th>
+        <th>Golongan Darah</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -92,15 +95,18 @@
       if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
           echo "<tr>
-                  <td>{$row['id']}</td>
-                  <td>{$row['nama']}</td>
+                  <td>{$row['id_pasien']}</td>
+                  <td>{$row['nama_pasien']}</td>
                   <td>{$row['nik']}</td>
+                  <td>{$row['tanggal_lahir']}</td>
                   <td>{$row['jenis_kelamin']}</td>
-                  <td>{$row['no_hp']}</td>
                   <td>{$row['alamat']}</td>
+                  <td>{$row['no_telepon']}</td>
+                  <td>{$row['email']}</td>
+                  <td>{$row['golongan_darah']}</td>
                   <td>
-                    <a href='edit_pasien.php?id={$row['id']}' class='action-btn edit-btn'>Edit</a>
-                    <a href='hapus_pasien.php?id={$row['id']}' onclick=\"return confirm('Yakin ingin menghapus?')\" class='action-btn delete-btn'>Hapus</a>
+                    <a href='edit-pasien.php?id={$row['id_pasien']}' class='action-btn edit-btn'>Edit</a>
+                    <a href='../proses/hapus-pasien.php?id={$row['id_pasien']}' onclick=\"return confirm('Yakin ingin menghapus?')\" class='action-btn delete-btn'>Hapus</a>
                   </td>
                 </tr>";
         }
