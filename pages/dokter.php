@@ -398,7 +398,7 @@
             <div class="content-card">
                 <div class="card-header">
                     <h2 class="card-title">📋 Antrian Pasien Hari Ini</h2>
-                    <button class="btn btn-primary" onclick="refreshQueue()">🔄 Refresh</button>
+                    <button class="btn btn-primary" onclick="refreshQueue()"> 🔄 Refresh</button>
                 </div>
                 <ul class="patient-list">
                     <li class="patient-item">
