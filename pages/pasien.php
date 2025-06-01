@@ -244,7 +244,7 @@
     <div class="container">
         <div class="header">
             <h1>🏥 Registrasi Pasien</h1>
-            <p>Sistem Kesehatan RS Husada</p>
+            <p>Sistem Kesehatan RS Waras Husada</p>
         </div>
         
         <div class="progress-bar" id="progressBar"></div>
