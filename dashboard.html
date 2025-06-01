@@ -2,10 +2,235 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rumah Sakit Sehat Sentosa</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="src/css/style.css" />
+
+    <!-- Font Awesome untuk ikon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <h1>selamat datang di graha husada di graha</h1>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">RS Sehat Sentosa</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#hero">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#layanan">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dokter">Dokter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimoni">Testimoni</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#kontak">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      id="hero"
+      class="hero d-flex align-items-center"
+      style="background-image: url('src/rs.jpg')"
+    >
+      <div class="container text-center">
+        <h1>Selamat Datang di RS Sehat Sentosa</h1>
+        <p>Kesehatan Anda Prioritas Kami</p>
+        <a href="#layanan" class="btn btn-primary btn-lg mt-3"
+          >Lihat Layanan Kami</a
+        >
+      </div>
+    </section>
+
+    <!-- LAYANAN SECTION -->
+    <section id="layanan" class="container">
+      <h2 class="section-title">Layanan Kami</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="service-box p-4">
+            <i class="fa-solid fa-hospital-user"></i>
+            <h5>Rawat Inap</h5>
+            <p>Fasilitas kamar inap nyaman dengan perawatan terbaik.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box p-4">
+            <i class="fa-solid fa-stethoscope"></i>
+            <h5>Poliklinik</h5>
+            <p>Konsultasi dengan dokter spesialis berpengalaman.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box p-4">
+            <i class="fa-solid fa-syringe"></i>
+            <h5>Vaksinasi</h5>
+            <p>Program vaksin lengkap dan terpercaya untuk keluarga Anda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOKTER SECTION -->
+    <section id="dokter" class="container mt-5">
+      <h2 class="section-title">Dokter Unggulan</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="doctor-card">
+            <img src="src/dokter1.jpg" alt="Dr. Ahmad" />
+            <div class="doctor-card-body">
+              <h5>Dr. Ahmad</h5>
+              <p>Spesialis Jantung</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="doctor-card">
+            <img src="src/dokter2.jpg" alt="Dr. Sari" />
+            <div class="doctor-card-body">
+              <h5>Dr. Sari</h5>
+              <p>Spesialis Anak</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="doctor-card">
+            <img src="src/dokter3.jpg" alt="Dr. Budi" />
+            <div class="doctor-card-body">
+              <h5>Dr. Budi</h5>
+              <p>Spesialis Bedah</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="doctor-card">
+            <img src="src/dokter4.jpg" alt="Dr. Lina" />
+            <div class="doctor-card-body">
+              <h5>Dr. Lina</h5>
+              <p>Spesialis Gigi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <section id="testimoni" class="container mt-5">
+      <h2 class="section-title">Testimoni Pasien</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+          <div class="testimoni-card">
+            <p>
+              "Pelayanan di RS Sehat Sentosa sangat ramah dan profesional. Saya
+              merasa nyaman selama perawatan."
+            </p>
+            <h6>- Budi Santoso</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimoni-card">
+            <p>
+              "Dokter dan perawat sangat perhatian. Rumah sakit ini rekomendasi
+              saya!"
+            </p>
+            <h6>- Siti Aminah</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK SECTION -->
+    <section id="kontak" class="container mt-5 mb-5">
+      <h2 class="section-title">Kontak Kami</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="nama" class="form-label">Nama Lengkap</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                placeholder="Masukkan nama lengkap"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="Masukkan email"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea
+                class="form-control"
+                id="pesan"
+                rows="4"
+                placeholder="Tulis pesan Anda"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <!-- Google Maps iframe -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.48966064207!2d106.67771105583563!3d-6.21462049555225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5c64d147e05%3A0x4a0036a5c228e5b3!2sRumah%20Sakit!5e0!3m2!1sen!2sid!4v1672136571234!5m2!1sen!2sid"
+            width="100%"
+            height="320"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+      <div class="container">
+        <p>&copy; 2025 Rumah Sakit Sehat Sentosa. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
