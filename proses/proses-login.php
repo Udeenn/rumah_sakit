@@ -12,7 +12,7 @@ if ($user = mysqli_fetch_assoc($result)) {
         $_SESSION['id_admin'] = $user['id_admin'];
         $_SESSION['nama_admin'] = $user['nama_admin'];
 
-        header("Location: ../pages/dashboard-admin.html");
+        header("Location: ../pages/dashboard-admin.php");
     } else {
         echo "Password salah. <a href='login.php'>Coba lagi</a>";
     }
