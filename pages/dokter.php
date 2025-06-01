@@ -332,7 +332,7 @@
         <!-- Header -->
         <div class="header">
             <div>
-                <h1>🏥 Dashboard Dokter</h1>
+                <h1>🏥 Selamat Datang Dokter</h1>
                 <p>Selamat datang di sistem manajemen rumah sakit</p>
             </div>
             <div class="doctor-info">
