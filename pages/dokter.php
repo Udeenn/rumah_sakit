@@ -73,7 +73,7 @@
 <body>
   <h2>Data Dokter</h2>
 
-  <a href="tambah_dokter.php" class="add-button">+ Tambah Dokter</a>
+  <a href="tambah-dokter.php" class="add-button">+ Tambah Dokter</a>
 
   <table>
     <thead>
