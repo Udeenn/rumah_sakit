@@ -1,82 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Data Pasien</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
-    }
+<a href="tambah-pasien.php" class="btn btn-success mb-3">+ Tambah Pasien</a>
 
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    .add-btn {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 15px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    th, td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: center;
-    }
-
-    th {
-      background-color: #007BFF;
-      color: white;
-    }
-
-    tr:hover {
-      background-color: #f1f1f1;
-    }
-
-    .action-btn {
-      padding: 5px 10px;
-      border-radius: 5px;
-      color: white;
-      text-decoration: none;
-      margin: 0 2px;
-    }
-
-    .edit-btn {
-      background-color: #ffc107;
-    }
-
-    .delete-btn {
-      background-color: #dc3545;
-    }
-  </style>
-</head>
-<body>
-
-  <h2>Data Pasien</h2>
-
-  <a href="tambah-pasien.php" class="add-btn">+ Tambah Pasien</a>
-
-  <table>
-    <thead>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped">
+    <thead class="table-primary">
       <tr>
         <th>ID</th>
         <th>Nama</th>
         <th>NIK</th>
-        <th>Tanggak Lahir</th>
+        <th>Tanggal Lahir</th>
         <th>Jenis Kelamin</th>
         <th>Alamat</th>
         <th>No Telepon</th>
@@ -87,7 +18,7 @@
     </thead>
     <tbody>
       <?php
-      include '../koneksi.php'; // gunakan file koneksi eksternal
+      include '../koneksi.php';
 
       $sql = "SELECT * FROM pasien";
       $result = mysqli_query($conn, $sql);
@@ -105,17 +36,15 @@
                   <td>{$row['email']}</td>
                   <td>{$row['golongan_darah']}</td>
                   <td>
-                    <a href='edit-pasien.php?id={$row['id_pasien']}' class='action-btn edit-btn'>Edit</a>
-                    <a href='../proses/hapus-pasien.php?id={$row['id_pasien']}' onclick=\"return confirm('Yakin ingin menghapus?')\" class='action-btn delete-btn'>Hapus</a>
+                    <a href='edit-pasien.php?id={$row['id_pasien']}' class='btn btn-warning btn-sm'>Edit</a>
+                    <a href='../proses/hapus-pasien.php?id={$row['id_pasien']}' onclick=\"return confirm('Yakin ingin menghapus?')\" class='btn btn-danger btn-sm'>Hapus</a>
                   </td>
                 </tr>";
         }
       } else {
-        echo "<tr><td colspan='7'>Tidak ada data pasien.</td></tr>";
+        echo "<tr><td colspan='10' class='text-center'>Tidak ada data pasien.</td></tr>";
       }
       ?>
     </tbody>
   </table>
-
-</body>
-</html>
+</div>

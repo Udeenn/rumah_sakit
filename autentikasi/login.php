@@ -4,78 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login Admin RS</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
 
+  <!-- Bootstrap CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
     body {
-      font-family: Arial, sans-serif;
       background-color: #ecf0f1;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
     }
 
-    .login-container {
+    .login-box {
       background-color: #fff;
-      padding: 30px 40px;
-      border-radius: 8px;
+      border-radius: 10px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
       width: 100%;
       max-width: 400px;
     }
 
-    h2 {
+    .login-box img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100px;
+    }
+
+    .login-box h2 {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       color: #2c3e50;
     }
 
-    input[type="text"],
-    input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #bdc3c7;
-      border-radius: 5px;
-      font-size: 14px;
+    .form-control {
+      margin-bottom: 20px;
     }
 
-    button {
-      width: 100%;
-      padding: 12px;
+    .btn-primary {
       background-color: #3498db;
-      color: white;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    button:hover {
+    .btn-primary:hover {
       background-color: #2980b9;
-    }
-
-    @media (max-width: 500px) {
-      .login-container {
-        padding: 20px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <div class="login-container">
-    <h2>Login</h2>
+  <div class="login-box">
+    <!-- Logo Rumah Sakit -->
+    <img src="../src/logo-rs.png" alt="Logo RS" />
+
+    <h2>Login Admin</h2>
+
     <form action="../proses/proses-login.php" method="POST">
-      <input type="text" name="username" placeholder="Nama" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <button type="submit">Login</button>
+      <input
+        type="text"
+        name="username"
+        class="form-control"
+        placeholder="Nama"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        placeholder="Password"
+        required
+      />
+      <button type="submit" class="btn btn-primary w-100">Login</button>
     </form>
   </div>
 
