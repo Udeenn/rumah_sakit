@@ -182,7 +182,7 @@
             <p>Sistem Manajemen Ruangan Rumah Sakit</p>
         </div>
 
-        <form id="roomForm" action="#" method="POST">
+        <form action="process_room.php" method="POST">
             <div class="form-group">
                 <label for="roomId">ID Ruangan</label>
                 <input type="text" id="roomId" name="roomId" required placeholder="Contoh: R001">
@@ -196,7 +196,6 @@
             <div class="form-group">
                 <label for="roomType">Jenis Ruangan</label>
                 <select id="roomType" name="roomType" required>
-                    <option value="">-- Pilih Jenis Ruangan --</option>
                     <option value="rawat_inap">🏥 Rawat Inap</option>
                     <option value="rawat_jalan">🚶 Rawat Jalan</option>
                     <option value="operasi">⚕️ Operasi</option>
@@ -212,7 +211,6 @@
             <div class="form-group">
                 <label for="roomStatus">Status Ruangan</label>
                 <select id="roomStatus" name="roomStatus" required>
-                    <option value="">-- Pilih Status --</option>
                     <option value="tersedia"><span class="status-indicator status-tersedia"></span>✅ Tersedia</option>
                     <option value="terpakai"><span class="status-indicator status-terpakai"></span>❌ Terpakai</option>
                 </select>
@@ -224,60 +222,5 @@
             </div>
         </form>
     </div>
-
-    <script>
-        // Form validation dan handling
-        document.getElementById('roomForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Ambil data form
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Validasi data
-            if (!data.roomId || !data.roomName || !data.roomType || !data.roomStatus) {
-                alert('⚠️ Mohon lengkapi semua field yang diperlukan!');
-                return;
-            }
-            
-            // Simulasi penyimpanan data
-            console.log('Data ruangan:', data);
-            alert(`✅ Data ruangan berhasil disimpan!\n\nID: ${data.roomId}\nNama: ${data.roomName}\nJenis: ${data.roomType}\nStatus: ${data.roomStatus}`);
-            
-            // Reset form setelah berhasil
-            this.reset();
-        });
-
-        // Reset form dengan konfirmasi
-        document.querySelector('.btn-secondary').addEventListener('click', function(e) {
-            if (!confirm('🤔 Apakah Anda yakin ingin mengosongkan form?')) {
-                e.preventDefault();
-            }
-        });
-
-        // Auto-generate ID ruangan jika kosong
-        document.getElementById('roomType').addEventListener('change', function() {
-            const roomIdField = document.getElementById('roomId');
-            if (!roomIdField.value) {
-                const typeMap = {
-                    'rawat_inap': 'RI',
-                    'rawat_jalan': 'RJ',
-                    'operasi': 'OP',
-                    'icu': 'IC',
-                    'ugd': 'UG',
-                    'laboratorium': 'LB',
-                    'radiologi': 'RD',
-                    'konsultasi': 'KS',
-                    'administrasi': 'AD'
-                };
-                
-                const prefix = typeMap[this.value];
-                if (prefix) {
-                    const randomNum = Math.floor(Math.random() * 900) + 100;
-                    roomIdField.value = `${prefix}${randomNum}`;
-                }
-            }
-        });
-    </script>
 </body>
 </html>
