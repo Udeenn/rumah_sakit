@@ -102,8 +102,8 @@
                   <td>{$row['email']}</td>
                   <td>{$row['no_telepon']}</td>
                   <td>
-                    <a href='edit_dokter.php?id={$row['id_dokter']}' class='action-btn edit-btn'>Edit</a>
-                    <a href='hapus_dokter.php?id={$row['id_dokter']}' class='action-btn delete-btn' onclick=\"return confirm('Yakin ingin menghapus data ini?')\">Hapus</a>
+                    <a href='edit-dokter.php?id={$row['id_dokter']}' class='action-btn edit-btn'>Edit</a>
+                    <a href='../proses/hapus-dokter.php?id={$row['id_dokter']}' class='action-btn delete-btn' onclick=\"return confirm('Yakin ingin menghapus data ini?')\">Hapus</a>
                   </td>
                 </tr>";
         }
