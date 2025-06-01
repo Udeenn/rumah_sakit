@@ -9,43 +9,12 @@
       margin: 40px;
       background-color: #f4f6f8;
     }
+
     h2 {
       text-align: center;
       color: #333;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background-color: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-    tr:hover {
-      background-color: #f1f1f1;
-    }
-    .action-btn {
-      padding: 6px 12px;
-      margin: 2px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      color: white;
-    }
-    .edit-btn {
-      background-color: #2196F3;
-    }
-    .delete-btn {
-      background-color: #f44336;
-    }
+
     .add-button {
       display: inline-block;
       margin-bottom: 15px;
@@ -55,8 +24,49 @@
       text-decoration: none;
       border-radius: 5px;
     }
+
     .add-button:hover {
       background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2196F3;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .action-btn {
+      padding: 6px 12px;
+      margin: 2px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+    }
+
+    .edit-btn {
+      background-color: #ffc107;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
     }
   </style>
 </head>
@@ -78,37 +88,28 @@
     </thead>
     <tbody>
       <?php
-      // Koneksi ke database
-      $conn = new mysqli("localhost", "root", "", "nama_database");
+      include '../koneksi.php'; // file koneksi di-include di sini
 
-      // Cek koneksi
-      if ($conn->connect_error) {
-        die("Koneksi gagal: " . $conn->connect_error);
-      }
-
-      // Ambil data dari tabel dokter
       $sql = "SELECT * FROM dokter";
-      $result = $conn->query($sql);
+      $result = mysqli_query($conn, $sql);
 
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
+      if (mysqli_num_rows($result)) {
+        while ($row = mysqli_fetch_assoc($result)) {
           echo "<tr>
-            <td>{$row['id']}</td>
-            <td>{$row['nama']}</td>
-            <td>{$row['spesialis']}</td>
-            <td>{$row['no_str']}</td>
-            <td>{$row['no_hp']}</td>
-            <td>
-              <a href='edit_dokter.php?id={$row['id']}' class='action-btn edit-btn'>Edit</a>
-              <a href='hapus_dokter.php?id={$row['id']}' onclick='return confirm(\"Yakin ingin menghapus?\")' class='action-btn delete-btn'>Hapus</a>
-            </td>
-          </tr>";
+                  <td>{$row['id_dokter']}</td>
+                  <td>{$row['nama_dokter']}</td>
+                  <td>{$row['spesialisasi']}</td>
+                  <td>{$row['email']}</td>
+                  <td>{$row['no_telepon']}</td>
+                  <td>
+                    <a href='edit_dokter.php?id={$row['id_dokter']}' class='action-btn edit-btn'>Edit</a>
+                    <a href='hapus_dokter.php?id={$row['id_dokter']}' class='action-btn delete-btn' onclick=\"return confirm('Yakin ingin menghapus data ini?')\">Hapus</a>
+                  </td>
+                </tr>";
         }
       } else {
-        echo "<tr><td colspan='6'>Tidak ada data</td></tr>";
+        echo "<tr><td colspan='6'>Data dokter belum tersedia.</td></tr>";
       }
-
-      $conn->close();
       ?>
     </tbody>
   </table>
