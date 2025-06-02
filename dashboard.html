@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,20 +11,203 @@
       rel="stylesheet"
     />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="src/css/style.css" />
-
     <!-- Font Awesome untuk ikon -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      /* Navbar */
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #0d6efd !important;
+      }
+
+      /* Hero Section */
+      #hero {
+        height: 90vh;
+        background-size: cover;
+        background-position: center;
+        color: white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+      }
+      #hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+      }
+      #hero p {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      #hero .btn-primary {
+        font-weight: 600;
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        transition: background-color 0.3s ease;
+      }
+      #hero .btn-primary:hover {
+        background-color: #0b5ed7;
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #0d6efd;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      /* Service Boxes */
+      .service-box {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(13, 110, 253, 0.15);
+        text-align: center;
+        padding: 40px 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .service-box i {
+        font-size: 50px;
+        color: #0d6efd;
+        margin-bottom: 20px;
+        transition: color 0.3s ease;
+      }
+      .service-box h5 {
+        font-weight: 700;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+      }
+      .service-box p {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .service-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(13, 110, 253, 0.3);
+      }
+      .service-box:hover i {
+        color: #0a58ca;
+      }
+
+      /* Doctor Cards */
+      .doctor-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .doctor-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .doctor-card:hover img {
+        transform: scale(1.05);
+      }
+      .doctor-card-body {
+        padding: 15px 20px;
+        text-align: center;
+      }
+      .doctor-card-body h5 {
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #0d6efd;
+      }
+      .doctor-card-body p {
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      /* Testimoni Cards */
+      .testimoni-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px 25px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        font-style: italic;
+        color: #555;
+        transition: box-shadow 0.3s ease;
+      }
+      .testimoni-card:hover {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      .testimoni-card h6 {
+        margin-top: 20px;
+        font-weight: 700;
+        font-style: normal;
+        color: #0d6efd;
+      }
+
+      /* Contact Form */
+      #kontak label {
+        font-weight: 600;
+        color: #0d6efd;
+      }
+      #kontak .form-control {
+        border-radius: 8px;
+        box-shadow: none !important;
+        border: 1.8px solid #0d6efd;
+        transition: border-color 0.3s ease;
+      }
+      #kontak .form-control:focus {
+        border-color: #0a58ca;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+      }
+      #kontak button.btn-primary {
+        background-color: #0d6efd;
+        border: none;
+        font-weight: 600;
+        padding: 12px 30px;
+        transition: background-color 0.3s ease;
+      }
+      #kontak button.btn-primary:hover {
+        background-color: #0a58ca;
+      }
+
+      /* Footer */
+      footer {
+        background: #0d6efd;
+        color: white;
+        padding: 25px 0;
+        margin-top: 60px;
+      }
+      footer p {
+        margin: 0;
+      }
+      footer .social-icons a {
+        color: white;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+      footer .social-icons a:hover {
+        color: #ffc107;
+      }
+    </style>
   </head>
   <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#">RS Sehat Sentosa</a>
+        <a class="navbar-brand" href="#">RS Waras Husada</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -64,11 +247,11 @@
     <!-- HERO SECTION -->
     <section
       id="hero"
-      class="hero d-flex align-items-center"
-      style="background-image: url('src/rs.jpg')"
+      class="hero d-flex align-items-center justify-content-center"
+      style="background-image: url('src/rs.avif')"
     >
       <div class="container text-center">
-        <h1>Selamat Datang di RS Sehat Sentosa</h1>
+        <h1>Selamat Datang di RS Waras Husada</h1>
         <p>Kesehatan Anda Prioritas Kami</p>
         <a href="#layanan" class="btn btn-primary btn-lg mt-3"
           >Lihat Layanan Kami</a
@@ -77,70 +260,100 @@
     </section>
 
     <!-- LAYANAN SECTION -->
-    <section id="layanan" class="container">
+    <section id="layanan" class="container my-5">
       <h2 class="section-title">Layanan Kami</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="service-box p-4">
             <i class="fa-solid fa-hospital-user"></i>
             <h5>Rawat Inap</h5>
-            <p>Fasilitas kamar inap nyaman dengan perawatan terbaik.</p>
+            <p>
+              Fasilitas rawat inap dengan kamar yang nyaman dan layanan 24 jam
+              oleh tenaga medis profesional.
+            </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="service-box p-4">
             <i class="fa-solid fa-stethoscope"></i>
             <h5>Poliklinik</h5>
-            <p>Konsultasi dengan dokter spesialis berpengalaman.</p>
+            <p>
+              Berbagai spesialisasi dokter tersedia untuk konsultasi dan
+              pemeriksaan kesehatan.
+            </p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="service-box p-4">
             <i class="fa-solid fa-syringe"></i>
             <h5>Vaksinasi</h5>
-            <p>Program vaksin lengkap dan terpercaya untuk keluarga Anda.</p>
+            <p>
+              Program vaksin lengkap untuk berbagai usia dan kebutuhan kesehatan
+              Anda.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box p-4">
+            <i class="fa-solid fa-x-ray"></i>
+            <h5>Radiologi</h5>
+            <p>
+              Layanan pemeriksaan radiologi modern dengan hasil cepat dan
+              akurat.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box p-4">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h5>Kardiologi</h5>
+            <p>
+              Pemeriksaan dan pengobatan penyakit jantung dengan peralatan
+              canggih.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box p-4">
+            <i class="fa-solid fa-brain"></i>
+            <h5>Neurologi</h5>
+            <p>
+              Penanganan kelainan dan gangguan sistem saraf dengan tim dokter
+              ahli.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- DOKTER SECTION -->
-    <section id="dokter" class="container mt-5">
-      <h2 class="section-title">Dokter Unggulan</h2>
+    <section id="dokter" class="container my-5">
+      <h2 class="section-title">Dokter Kami</h2>
       <div class="row g-4">
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="doctor-card">
-            <img src="src/dokter1.jpg" alt="Dr. Ahmad" />
+            <img src="src/dokter1.jpg" alt="Dr. Andi" />
             <div class="doctor-card-body">
-              <h5>Dr. Ahmad</h5>
-              <p>Spesialis Jantung</p>
+              <h5>Dr. Andi Wijaya, Sp.OG</h5>
+              <p>Spesialis Obstetri dan Ginekologi</p>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="doctor-card">
             <img src="src/dokter2.jpg" alt="Dr. Sari" />
             <div class="doctor-card-body">
-              <h5>Dr. Sari</h5>
-              <p>Spesialis Anak</p>
+              <h5>Dr. Sari Lestari, Sp.PD</h5>
+              <p>Spesialis Penyakit Dalam</p>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
           <div class="doctor-card">
             <img src="src/dokter3.jpg" alt="Dr. Budi" />
             <div class="doctor-card-body">
-              <h5>Dr. Budi</h5>
-              <p>Spesialis Bedah</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="doctor-card">
-            <img src="src/dokter4.jpg" alt="Dr. Lina" />
-            <div class="doctor-card-body">
-              <h5>Dr. Lina</h5>
-              <p>Spesialis Gigi</p>
+              <h5>Dr. Budi Santoso, Sp.KJ</h5>
+              <p>Spesialis Kejiwaan</p>
             </div>
           </div>
         </div>
@@ -148,89 +361,138 @@
     </section>
 
     <!-- TESTIMONI SECTION -->
-    <section id="testimoni" class="container mt-5">
-      <h2 class="section-title">Testimoni Pasien</h2>
-      <div class="row g-4 justify-content-center">
+    <section
+      id="testimoni"
+      class="container my-5"
+      style="background-color: #e9ecef; border-radius: 15px; padding: 40px"
+    >
+      <h2 class="section-title text-primary">Testimoni Pasien</h2>
+      <div class="row g-4">
         <div class="col-md-4">
           <div class="testimoni-card">
             <p>
-              "Pelayanan di RS Sehat Sentosa sangat ramah dan profesional. Saya
-              merasa nyaman selama perawatan."
+              "Pelayanan di RS Sehat Sentosa sangat memuaskan. Dokter dan
+              perawatnya ramah dan profesional."
             </p>
-            <h6>- Budi Santoso</h6>
+            <h6>- Ibu Rina</h6>
           </div>
         </div>
         <div class="col-md-4">
           <div class="testimoni-card">
             <p>
-              "Dokter dan perawat sangat perhatian. Rumah sakit ini rekomendasi
-              saya!"
+              "Fasilitas rumah sakit lengkap dan bersih. Saya merasa nyaman
+              selama perawatan."
             </p>
-            <h6>- Siti Aminah</h6>
+            <h6>- Bapak Agus</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimoni-card">
+            <p>
+              "Dokter spesialis yang menangani saya sangat ahli dan sabar
+              menjelaskan kondisi saya."
+            </p>
+            <h6>- Siti</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimoni-card">
+            <p>
+              "Proses pendaftaran cepat dan mudah, tidak perlu menunggu lama."
+            </p>
+            <h6>- Dedi</h6>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimoni-card">
+            <p>
+              "Vaksinasi anak saya berjalan lancar dengan tenaga medis yang
+              sangat ramah."
+            </p>
+            <h6>- Rina</h6>
           </div>
         </div>
       </div>
     </section>
 
     <!-- KONTAK SECTION -->
-    <section id="kontak" class="container mt-5 mb-5">
+    <section id="kontak" class="container my-5">
       <h2 class="section-title">Kontak Kami</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <form>
-            <div class="mb-3">
-              <label for="nama" class="form-label">Nama Lengkap</label>
-              <input
-                type="text"
-                class="form-control"
-                id="nama"
-                placeholder="Masukkan nama lengkap"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="Masukkan email"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="pesan" class="form-label">Pesan</label>
-              <textarea
-                class="form-control"
-                id="pesan"
-                rows="4"
-                placeholder="Tulis pesan Anda"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
-          </form>
+      <form>
+        <div class="mb-3">
+          <label for="nama" class="form-label">Nama Lengkap</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nama"
+            placeholder="Masukkan nama lengkap Anda"
+            required
+          />
         </div>
-        <div class="col-md-6">
-          <!-- Google Maps iframe -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.48966064207!2d106.67771105583563!3d-6.21462049555225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5c64d147e05%3A0x4a0036a5c228e5b3!2sRumah%20Sakit!5e0!3m2!1sen!2sid!4v1672136571234!5m2!1sen!2sid"
-            width="100%"
-            height="320"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div class="mb-3">
+          <label for="email" class="form-label">Alamat Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Masukkan email Anda"
+            required
+          />
         </div>
-      </div>
+        <div class="mb-3">
+          <label for="telepon" class="form-label">Nomor Telepon</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telepon"
+            placeholder="Masukkan nomor telepon Anda"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="subjek" class="form-label">Subjek Pesan</label>
+          <input
+            type="text"
+            class="form-control"
+            id="subjek"
+            placeholder="Subjek pesan"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="pesan" class="form-label">Pesan</label>
+          <textarea
+            class="form-control"
+            id="pesan"
+            rows="5"
+            placeholder="Tulis pesan Anda di sini"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+      </form>
     </section>
 
     <!-- FOOTER -->
     <footer class="text-center">
       <div class="container">
-        <p>&copy; 2025 Rumah Sakit Sehat Sentosa. All Rights Reserved.</p>
+        <p>© 2025 RS Waras Husada. All rights reserved.</p>
+        <div class="social-icons mt-2">
+          <a href="#" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
       </div>
     </footer>
 
-    <!-- Bootstrap JS Bundle -->
+    <!-- Bootstrap JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
