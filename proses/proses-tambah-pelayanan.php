@@ -17,7 +17,7 @@ $query = "INSERT INTO pelayanan (
 )";
 
 if (mysqli_query($conn, $query)) {
-  echo "<script>alert('Data berhasil ditambahkan'); window.location='data_pelayanan.php';</script>";
+  echo "<script>alert('Data berhasil ditambahkan'); window.location='http://localhost/rumah_sakit/pages/dashboard-admin.php?page=pelayanan';</script>";
 } else {
   echo "Error saat menambahkan data: " . mysqli_error($conn);
 }

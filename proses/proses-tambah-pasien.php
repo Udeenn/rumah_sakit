@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
   $result = mysqli_query($conn, $query);
 
   if ($result) {
-    echo "<script>alert('Data berhasil ditambahkan!'); window.location='pasien.php';</script>";
+    echo "<script>alert('Data berhasil ditambahkan!'); window.location='http://localhost/rumah_sakit/pages/dashboard-admin.php?page=pasien';</script>";
   } else {
     echo "<script>alert('Gagal menambahkan data!'); window.location='tambah_pasien.php';</script>";
   }

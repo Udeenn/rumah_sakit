@@ -164,7 +164,7 @@ include '../koneksi.php'; // pastikan file koneksi database ada
         </div>
 
         <hr class="my-4">
-
+        <a href="tambah-ruangan.php" class="btn btn-success mb-3">+ Tambah Ruangan</a>
         <h5 class="mb-3">Daftar Ruangan</h5>
         <div class="table-responsive">
           <table class="table table-bordered table-striped">
